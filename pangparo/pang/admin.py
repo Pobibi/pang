@@ -4,3 +4,4 @@ from pang.models import Panglist,Pangstore,Panguser
 admin.site.register(Panglist)
 admin.site.register(Pangstore)
 admin.site.register(Panguser)
+

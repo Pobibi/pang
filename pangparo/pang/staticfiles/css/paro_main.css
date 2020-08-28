@@ -6,6 +6,7 @@
     font-family: 'Noto Sans KR', sans-serif;}
 li{list-style: none;}
 a{text-decoration: none;}
+
 .div_column{
     display : flex ;
     flex-direction : column ;  
@@ -121,4 +122,18 @@ a{text-decoration: none;}
 .submenu .menuLink:hover{
     color:white;
     background-color: #9DC3C1;
+}
+
+
+/*리스트*/
+.list{
+  margin:auto;
+  display: table;
+  width: 1200px;
+  table-layout: fixed;
+}
+
+.list tr td{
+    display: table-cell;
+    vertical-align: middle;
 }

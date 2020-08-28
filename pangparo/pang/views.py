@@ -1,11 +1,12 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Panguser
+from .models import Panglist
+from .models import Pangstore
 from django.contrib.auth.hashers import check_password
 
 # Create your views here.
-def pang(request):
-    return render(request,'pang/paro_main.html')
+
 
 #로그인
 def login(request):
@@ -33,3 +34,10 @@ def login(request):
             else:
                 res_data['error'] = "비밀번호가 틀렸습니다"
         return render(request,'pang/paro_login.html',res_data) #응답 데이터 res_data 전달
+
+
+#빵 리스트 보여주기
+def pang(request):
+    panglists=Panglist.objects.all() # 빵 리스트 가져오기
+    context={'panglists':panglists}  
+    return render(request,'pang/paro_main.html',context)

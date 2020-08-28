@@ -13,11 +13,11 @@ class Pangstore(models.Model):
 
 
 class Panglist(models.Model):
-    pangnum=models.IntegerField(primary_key=True,unique=True)
+    pangnum=models.IntegerField(primary_key=True,unique=True,auto_created=True)
     stonum=models.ForeignKey('Pangstore',on_delete=models.CASCADE)
     pangname=models.CharField(max_length=30)
     pangcate=models.CharField(max_length=20)
-    pangimg=models.FileField(upload_to='post_image',blank=True)
+    pangimg=models.ImageField(upload_to='media',blank=True)
     pangcount=models.IntegerField()
     panginfo=models.CharField(max_length=1000)
     pangal=models.CharField(max_length=1000)

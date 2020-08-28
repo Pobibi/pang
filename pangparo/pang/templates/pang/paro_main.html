@@ -41,12 +41,18 @@
         </nav>
 
     </div>
-
-
-    <div>
-    </div>
-    
-
-    
+    <div class="div_column">
+    <center>
+    <table cols="4" class="list">
+        <tr>
+        {% for panglist in panglists %}
+             <td><img src="{{ panglist.pangimg.url }}" alt="image/" width="300">
+             <h3>{{panglist.pangname}}</h3>  
+             재고수 <span style="color:rgb(192, 57, 43)">{{panglist.pangcount}}</span></td>
+        {% endfor %}
+        </tr> 
+    </table>  
+   </center>    
+</div>
 </body>
 </html>
